@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:paddingHorizontal="50sp"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TextView
+            android:id="@+id/welcome"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome"
+            android:textSize="28sp"
+            android:textColor="#24a0ed"
+            android:layout_marginTop="130sp"/>
+
+        <TextView
+            android:id="@+id/to_continue"
+            app:layout_constraintTop_toBottomOf="@+id/welcome"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create an account to continue"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/label_phone"
+            app:layout_constraintTop_toBottomOf="@+id/to_continue"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone Number"
+            android:textSize="14sp"
+            android:layout_marginTop="40sp"/>
+
+        <com.example.softkeyboardadjust.MyEditText
+            android:id="@+id/input_phone"
+            app:layout_constraintTop_toBottomOf="@+id/label_phone"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="888-723-8823"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/label_user_name"
+            app:layout_constraintTop_toBottomOf="@+id/input_phone"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Name"
+            android:layout_marginTop="20sp"
+            android:textSize="14sp"/>
+
+        <com.example.softkeyboardadjust.MyEditText
+            android:id="@+id/input_user_name"
+            app:layout_constraintTop_toBottomOf="@+id/label_user_name"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="Carol"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/label_password"
+            app:layout_constraintTop_toBottomOf="@+id/input_user_name"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textSize="14sp"
+            android:layout_marginTop="20sp"/>
+
+        <com.example.softkeyboardadjust.MyEditText
+            android:id="@+id/input_password"
+            app:layout_constraintTop_toBottomOf="@+id/label_password"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="aaaaaa"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/label_password2"
+            app:layout_constraintTop_toBottomOf="@+id/input_password"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password2"
+            android:textSize="14sp"
+            android:layout_marginTop="20sp"/>
+
+        <com.example.softkeyboardadjust.MyEditText
+            android:id="@+id/input_password2"
+            app:layout_constraintTop_toBottomOf="@+id/label_password2"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="aaaaaa"
+            android:maxLines="1"
+            android:lines="1"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn"
+            app:layout_constraintTop_toBottomOf="@+id/input_password2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="250sp"
+            android:layout_height="50sp"
+            android:text="Sign Up"
+            android:textColor="#ffffff"
+            android:background="#24a0ed"
+            android:layout_marginTop="30sp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
+
