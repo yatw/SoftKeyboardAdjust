@@ -9,7 +9,7 @@ Example of how to pan the page up more with or without full screen mode (works w
 If you have a layout that is resizeable, and you actually want to resize. Use the original AndroidBug5497Workaround.   
     
 If you have a layout that is not resizeable, this example shows you how to create the pan up effect (with or without full screen mode)    
-* As of why it work with or without full screen mode. Because now we are always listening to the layout height changed and apply our own pan up effect.  
+* As of why it work with or without full screen mode. Because now we are always listening to the layout height changed and applying our own pan up effect.  
 * As of why it work with either adjustPan or adjustResize. Because our layout is not resizeable, so our own pan up effect always take effect.  
         
 **Note: This is not a library, this is merely an example.** You must understand how to create these affect to apply them into your own project.    
@@ -39,7 +39,7 @@ We always shift the page down when the keyboard is closed.
 
 We can manually shift up and down our layout view to create the pan up effect.  
   
-On any view, we can use the ![scrollTo](https://developer.android.com/reference/android/view/View#scrollTo(int,%20int) method to to shift the page up.  
+On any view, we can use the [scrollTo](https://developer.android.com/reference/android/view/View#scrollTo(int,%20int)) method to to shift the page up.  
   
 Now is just to calculate how much distance to shift the page up. Let say we want to bring the current focused editText up to 1/4 of the screen height, then a large space below the editText will be showing.  
   
@@ -70,6 +70,8 @@ What I changed from the [original AndroidBug5497Workaround](https://stackoverflo
   
 1. Changed how to detect keyboard close. By comparing the previous available height with available height now. If keyboard is closed, then previous height (with keyboard) is less than available height now. And that difference need to be large enough. (1/4 of the screen, change as you like)   
 ![detectClose.png](demo/detectClose.png)  
+
+Some phone, like the motorola XT1097, will disable the full screen mode after opening the soft keyboard. This mean the bottom navigation bar will appear and cause our height to change. It does not reach 1/4 of the screen and our listener think the keyboard just closed. (which it is not)   
 2. onKeyboardOpen, I do not requestLayout. Calling requestLayout() here cause a blank white space in between the keyboard and content. I suspect it is because it is trying to resize after the pan up.  
 ![blankWhiteSpace.jpg](demo/blankWhiteSpace.jpg)  
   

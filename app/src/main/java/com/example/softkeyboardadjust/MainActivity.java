@@ -16,8 +16,6 @@ import com.lxj.xpopup.XPopup;
  *  https://github.com/llwl1982/FloatOnKeyboardLayout/blob/master/library/src/main/java/github/ll/view/FloatOnKeyboardLayout.java
  *
  *
- *  MUST USE softkeyboard input mode: adjustPan
- *  adjustResize sometime result in a white space between the content and softkeyboard
  * */
 
 public class MainActivity extends AppCompatActivity {
