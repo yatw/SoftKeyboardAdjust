@@ -58,7 +58,7 @@ public class AndroidBug5497Workaround2{
 
                 frameLayoutParams.height = totalScreenHeight - heightDifference;
                 listener.onKeyBoardShow(mChildOfContent, totalScreenHeight);
-                //mChildOfContent.requestLayout();  // DO NOT request layout after scroll up
+                //mChildOfContent.requestLayout();  // DO NOT request layout after scroll up to avoid white blank space between keyboard and content
 
             } else if (heightDifference < (totalScreenHeight/4) * -1) {
                 // keyboard probably just became hidden
