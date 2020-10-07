@@ -85,7 +85,10 @@ public class AndroidBug5497Workaround2{
     }
 
     public void handleShiftUp(View focusedView) {
-        // ((MainActivity)mContext).disableImmersiveMode();
+
+        if (((MainActivity)activity).DISABLE_IMMERSIVE_MODE_ON_KEYBOARD_OPEN){
+            ((MainActivity)activity).disableImmersiveMode();
+        }
 
         if (focusedView == null){
             Toast.makeText(activity, "focusedView is null", Toast.LENGTH_SHORT).show();

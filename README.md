@@ -21,7 +21,7 @@ If you have a layout that is not resizeable, this example shows you how to creat
 In [MainActivity](https://github.com/yatw/SoftKeyboardAdjust/blob/master/app/src/main/java/com/example/softkeyboardadjust/MainActivity.java), there is a flag USE_IMMERSIVE_MODE to control full screen mode or not.    
    
 Experiment with resizeable and non-resizeable layout.  
-Experiment with adjustPan and adjustResize input mode.
+Experiment with adjustPan and adjustResize input mode.  
 Experiment with different devices.  
     
 The current [activity_main.xml](https://github.com/yatw/SoftKeyboardAdjust/blob/master/app/src/main/res/layout/activity_main.xml) is non resizeable, all margin are fixed distance. A normal adjustResize will not have any affect.    
@@ -71,7 +71,10 @@ What I changed from the [original AndroidBug5497Workaround](https://stackoverflo
 1. Changed how to detect keyboard close. By comparing the previous available height with available height now. If keyboard is closed, then previous height (with keyboard) is less than available height now. And that difference need to be large enough. (1/4 of the screen, change as you like)   
 ![detectClose.png](demo/detectClose.png)  
 
-Some phone, like the motorola XT1097, will disable the full screen mode after opening the soft keyboard. This mean the bottom navigation bar will appear and cause our height to change. It does not reach 1/4 of the screen and our listener think the keyboard just closed. (which it is not)   
+Some phone, like the motorola XT1097, will disable the full screen mode after opening the soft keyboard. This mean the bottom navigation bar will appear and cause our height to change. It does not reach 1/4 of the screen and our listener think the keyboard just closed. (which it is not)    
+
+
+
 2. onKeyboardOpen, I do not requestLayout. Calling requestLayout() here cause a blank white space in between the keyboard and content. I suspect it is because it is trying to resize after the pan up.  
 ![blankWhiteSpace.jpg](demo/blankWhiteSpace.jpg)  
   

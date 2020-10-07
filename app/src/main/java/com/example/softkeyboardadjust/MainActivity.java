@@ -21,6 +21,7 @@ import com.lxj.xpopup.XPopup;
 public class MainActivity extends AppCompatActivity {
 
     private final boolean USE_IMMERSIVE_MODE = true;
+    public final boolean DISABLE_IMMERSIVE_MODE_ON_KEYBOARD_OPEN = false; // might be helpful to solve keyboard jumping issue when pop up
 
     public AndroidBug5497Workaround2 helper;
 
